@@ -78,7 +78,7 @@ void Uart::begin(unsigned long baudrate, uint16_t /*config*/)
 
   uint32_t nrfBaudRate;
 
-#ifdef NRF52
+#if defined(NRF52_SERIES)
   if (baudrate <= 1200) {
     nrfBaudRate = UARTE_BAUDRATE_BAUDRATE_Baud1200;
   } else if (baudrate <= 2400) {
